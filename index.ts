@@ -47,18 +47,51 @@
 // }
 
 // 4. Method Chaining
-class Rectangle {
-  width: number;
-  height: number;
-  constructor(width: number, height: number) {
-    this.height = height
-    this.width = width
-  }
-  scale(parameter:number):Rectangle{
-    this.width *= parameter
-    this.height*= parameter
-    return this
+// class Rectangle {
+//   width: number;
+//   height: number;
+//   constructor(width: number, height: number) {
+//     this.height = height;
+//     this.width = width;
+//   }
+//   scale(parameter: number): Rectangle {
+//     this.width *= parameter;
+//     this.height *= parameter;
+//     return this;
+//   }
+//   static newRectangle(obj1: Rectangle, obj2: Rectangle): Rectangle {
+//      return new Rectangle(
+//       (obj1.width + obj2.width) / 2,
+//       (obj1.height + obj2.height) / 2
+//     );
+//   }
+// }
 
+// 5. Shape with draw method
+class Shape {
+  constructor() {}
+  draw() {
+    console.log("drawing a shape");
   }
 }
-// 5. Shape with draw method
+class Circle extends Shape {
+  draw(): void {
+    console.log("drawing a circle");
+  }
+}
+
+class Triangle extends Shape {
+  draw(): void {
+    console.log("drawing a triangle");
+  }
+}
+class Square extends Shape {
+  draw(): void {
+    console.log("drawing a square");
+  }
+}
+function renderShapes(arrayObjects: Shape[]): void {
+  for (let i = 0; i < arrayObjects.length; i++) {
+    arrayObjects[i].draw();
+  }
+}
